@@ -1,0 +1,18 @@
+### ==========================================
+### 🔔 NOTIFICATION ENDPOINTS
+### ==========================================
+
+### Get My Notifications (must be logged in)
+GET http://localhost:6868/api/notification
+
+###
+
+### Mark Single Notification as Read
+PUT http://localhost:6868/api/notification/NOTIFICATION_ID_HERE/read
+
+###
+
+### Mark All Notifications as Read
+PUT http://localhost:6868/api/notification/read-all
+
+###

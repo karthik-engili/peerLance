@@ -1,0 +1,14 @@
+### ==========================================
+### 🔖 SAVED PROJECTS ENDPOINTS
+### ==========================================
+### Note: Only freelancers can save/bookmark projects.
+
+### Toggle Save/Unsave a Project (Freelancer only)
+POST http://localhost:6868/api/saved/PROJECT_ID_HERE
+
+###
+
+### Get All Saved Projects (Freelancer only)
+GET http://localhost:6868/api/saved
+
+###

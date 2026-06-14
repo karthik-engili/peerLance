@@ -1,0 +1,71 @@
+### ==========================================
+### 💰 BID ENDPOINTS
+### ==========================================
+
+### Submit Bid (Freelancer only — login as freelancer first)
+POST http://localhost:6868/api/bid
+Content-Type: application/json
+
+{
+    "projectId": "PROJECT_ID_HERE",
+    "proposedPrice": 3500,
+    "deliveryDays": 7,
+    "coverNote": "I have 2 years of React experience and have built 5+ portfolio sites. I can deliver a pixel-perfect responsive design with smooth animations."
+}
+
+###
+
+### Submit Bid — Second Freelancer (login as sara@test.com first)
+POST http://localhost:6868/api/bid
+Content-Type: application/json
+
+{
+    "projectId": "PROJECT_ID_HERE",
+    "proposedPrice": 4000,
+    "deliveryDays": 5,
+    "coverNote": "Full-stack developer specializing in modern React apps. I'll include free revisions and source code documentation."
+}
+
+###
+
+### Get All Bids for a Project
+GET http://localhost:6868/api/bid/project/PROJECT_ID_HERE
+
+###
+
+### Get My Bids (Freelancer only — paginated)
+GET http://localhost:6868/api/bid/my?page=1&limit=10
+
+###
+
+### Get My Bids — filter by status
+GET http://localhost:6868/api/bid/my?status=PENDING
+
+###
+
+### Edit Bid (Freelancer owner, while PENDING)
+PUT http://localhost:6868/api/bid/BID_ID_HERE
+Content-Type: application/json
+
+{
+    "proposedPrice": 3000,
+    "deliveryDays": 6,
+    "coverNote": "Updated: I can deliver in 6 days at a reduced price."
+}
+
+###
+
+### Withdraw Bid (Freelancer owner)
+DELETE http://localhost:6868/api/bid/BID_ID_HERE
+
+###
+
+### Accept Bid (Client who owns the project)
+PUT http://localhost:6868/api/bid/BID_ID_HERE/accept
+
+###
+
+### Reject Bid (Client who owns the project)
+PUT http://localhost:6868/api/bid/BID_ID_HERE/reject
+
+###

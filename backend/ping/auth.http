@@ -1,0 +1,88 @@
+### ==========================================
+### 🔐 AUTH ENDPOINTS
+### ==========================================
+
+### Register — Client
+POST http://localhost:6868/api/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Karthik",
+    "lastName": "Engili",
+    "email": "karthik@test.com",
+    "password": "test1234",
+    "role": "CLIENT"
+}
+
+###
+
+### Register — Freelancer
+POST http://localhost:6868/api/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Alex",
+    "lastName": "Dev",
+    "email": "alex@test.com",
+    "password": "test1234",
+    "role": "FREELANCER"
+}
+
+###
+
+### Register — Second Freelancer
+POST http://localhost:6868/api/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Sara",
+    "lastName": "Code",
+    "email": "sara@test.com",
+    "password": "test1234",
+    "role": "FREELANCER"
+}
+
+###
+
+### Login — Client
+POST http://localhost:6868/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "karthik@test.com",
+    "password": "test1234"
+}
+
+###
+
+### Login — Freelancer
+POST http://localhost:6868/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "alex@test.com",
+    "password": "test1234"
+}
+
+###
+
+### Login — Second Freelancer
+POST http://localhost:6868/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "sara@test.com",
+    "password": "test1234"
+}
+
+###
+
+### Logout
+POST http://localhost:6868/api/auth/logout
+
+###
+
+### Get Current User (must be logged in)
+GET http://localhost:6868/api/auth/me
+
+###

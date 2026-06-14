@@ -1,0 +1,39 @@
+### ==========================================
+### 💬 CHAT ENDPOINTS
+### ==========================================
+### Note: Chat only works after a bid is accepted on a project.
+### Login as either the client or the accepted freelancer.
+
+### Load Chat History for a Project
+GET http://localhost:6868/api/chat/PROJECT_ID_HERE
+
+###
+
+### Send a Message
+POST http://localhost:6868/api/chat
+Content-Type: application/json
+
+{
+    "projectId": "PROJECT_ID_HERE",
+    "receiverId": "RECEIVER_USER_ID_HERE",
+    "text": "Hey! I just accepted your bid. Let's discuss the project details."
+}
+
+###
+
+### Send Reply (login as the other user)
+POST http://localhost:6868/api/chat
+Content-Type: application/json
+
+{
+    "projectId": "PROJECT_ID_HERE",
+    "receiverId": "RECEIVER_USER_ID_HERE",
+    "text": "Thanks for accepting! I'll start working on the wireframes today."
+}
+
+###
+
+### Mark All Messages as Read in a Project Chat
+PUT http://localhost:6868/api/chat/PROJECT_ID_HERE/read
+
+###

@@ -1,0 +1,102 @@
+### ==========================================
+### 📋 PROJECT ENDPOINTS
+### ==========================================
+
+### Create Project (Client only — login as client first)
+POST http://localhost:6868/api/project
+Content-Type: application/json
+
+{
+    "title": "Build a Portfolio Website",
+    "description": "Need a responsive portfolio site with React and TailwindCSS. Should have sections for about, projects, contact with animations.",
+    "category": "Web Development",
+    "skillsRequired": "React, TailwindCSS, JavaScript",
+    "budgetMin": 2000,
+    "budgetMax": 5000,
+    "deadline": "2026-06-25"
+}
+
+###
+
+### Create Project 2
+POST http://localhost:6868/api/project
+Content-Type: application/json
+
+{
+    "title": "Design a Logo for Startup",
+    "description": "Modern minimal logo for a tech startup. Need multiple variants — dark, light, icon-only.",
+    "category": "Graphic Design",
+    "skillsRequired": "Figma, Illustrator, Branding",
+    "budgetMin": 500,
+    "budgetMax": 1500,
+    "deadline": "2026-06-20"
+}
+
+###
+
+### Create Project 3
+POST http://localhost:6868/api/project
+Content-Type: application/json
+
+{
+    "title": "Write Blog Articles on AI",
+    "description": "5 well-researched blog posts on AI trends in 2026. Each 1000+ words with proper SEO.",
+    "category": "Content Writing",
+    "skillsRequired": "Technical Writing, SEO, AI Knowledge",
+    "budgetMin": 1000,
+    "budgetMax": 3000,
+    "deadline": "2026-06-30"
+}
+
+###
+
+### Get All Open Projects (paginated)
+GET http://localhost:6868/api/project?page=1&limit=10
+
+###
+
+### Get All Open Projects — with search
+GET http://localhost:6868/api/project?search=portfolio
+
+###
+
+### Get All Open Projects — with category filter
+GET http://localhost:6868/api/project?category=Web Development
+
+###
+
+### Get All Open Projects — with budget filter
+GET http://localhost:6868/api/project?budgetMin=1000&budgetMax=5000
+
+###
+
+### Get My Projects (Client only)
+GET http://localhost:6868/api/project/my
+
+###
+
+### Get Project by ID (replace with actual ID)
+GET http://localhost:6868/api/project/PROJECT_ID_HERE
+
+###
+
+### Update Project (Client owner only)
+PUT http://localhost:6868/api/project/PROJECT_ID_HERE
+Content-Type: application/json
+
+{
+    "title": "Build a Portfolio Website v2",
+    "budgetMax": 6000
+}
+
+###
+
+### Delete Project (Client owner only)
+DELETE http://localhost:6868/api/project/PROJECT_ID_HERE
+
+###
+
+### Mark Project as Completed (Client owner, must be IN_PROGRESS)
+PUT http://localhost:6868/api/project/PROJECT_ID_HERE/complete
+
+###

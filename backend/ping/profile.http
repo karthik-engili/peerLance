@@ -1,0 +1,35 @@
+### ==========================================
+### 👤 PROFILE ENDPOINTS
+### ==========================================
+
+### Get Public Profile by ID
+GET http://localhost:6868/api/profile/USER_ID_HERE
+
+###
+
+### Update My Profile (must be logged in)
+PUT http://localhost:6868/api/profile
+Content-Type: application/json
+
+{
+    "firstName": "Karthik",
+    "lastName": "Engili",
+    "bio": "Full-stack developer passionate about building real-world applications.",
+    "skills": "React, Node.js, MongoDB, Express, TailwindCSS"
+}
+
+###
+
+### Upload Avatar (must be logged in)
+### Note: Use form-data in Postman/Thunder Client for file upload
+PUT http://localhost:6868/api/profile/avatar
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="avatar.png"
+Content-Type: image/png
+
+< ./test-avatar.png
+--boundary--
+
+###

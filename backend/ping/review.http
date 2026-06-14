@@ -1,0 +1,34 @@
+### ==========================================
+### ⭐ REVIEW ENDPOINTS
+### ==========================================
+### Note: Reviews can only be submitted after a project is marked COMPLETED.
+### Only the CLIENT can review the FREELANCER.
+
+### Submit Review (Client only, project must be COMPLETED)
+POST http://localhost:6868/api/review
+Content-Type: application/json
+
+{
+    "projectId": "PROJECT_ID_HERE",
+    "rating": 5,
+    "comment": "Excellent work! Delivered ahead of schedule with great attention to detail. Highly recommended."
+}
+
+###
+
+### Submit Review — 4 stars
+POST http://localhost:6868/api/review
+Content-Type: application/json
+
+{
+    "projectId": "PROJECT_ID_HERE",
+    "rating": 4,
+    "comment": "Good work overall. Communication could be improved but the final output was solid."
+}
+
+###
+
+### Get All Reviews for a Freelancer
+GET http://localhost:6868/api/review/freelancer/FREELANCER_ID_HERE
+
+###

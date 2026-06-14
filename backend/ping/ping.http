@@ -1,0 +1,13 @@
+### ==========================================
+### 🏥 HEALTH CHECK
+### ==========================================
+
+### Health Check
+GET http://localhost:6868/
+
+###
+
+### Test 404
+GET http://localhost:6868/api/nonexistent
+
+###
