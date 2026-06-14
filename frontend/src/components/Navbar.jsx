@@ -27,7 +27,7 @@ export const Navbar = () => {
   // Real-time socket notification listening
   useEffect(() => {
     if (currentUser) {
-      const socket = io("http://localhost:6868", { withCredentials: true });
+      const socket = io(import.meta.env.VITE_API_URL || "http://localhost:6868", { withCredentials: true });
       socket.emit("join-user", currentUser._id);
       
       const handleNewNotification = (noti) => {

@@ -61,7 +61,7 @@ export const Chat = () => {
 
   // 2. Setup socket connection and listeners
   useEffect(() => {
-    socketRef.current = io("http://localhost:6868", { withCredentials: true });
+    socketRef.current = io(import.meta.env.VITE_API_URL || "http://localhost:6868", { withCredentials: true });
     
     socketRef.current.on("receive-message", (msg) => {
       // Append only if it belongs to selected room
