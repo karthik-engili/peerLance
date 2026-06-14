@@ -27,7 +27,7 @@ api.interceptors.response.use(
       toast.error("Internal Server Error. Please try again later.");
     } else if (message) {
       // Don't show toast for specific silent checks (like me check)
-      const isCheckMe = error.config.url.endsWith("/auth/me");
+      const isCheckMe = error.config?.url?.endsWith("/auth/me");
       if (!isCheckMe) {
         toast.error(message);
       }
