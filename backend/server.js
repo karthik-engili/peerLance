@@ -26,7 +26,7 @@ config({ path: "./.env", encoding: "UTF-8" });
 const app = express();
 const httpServer = createServer(app);
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const FRONTEND_URL = (process.env.FRONTEND_URL || "http://localhost:5173").replace(/\/$/, "");
 
 // ==========================================
 // 🔌 SOCKET.IO SETUP
