@@ -18,7 +18,11 @@ const connectDB = async () => {
       console.warn("Mongoose disconnected from DB")
     );
 
-    await mongoose.connect(process.env.DB_URL);
+    const dbUrl = process.env.DB_URL || process.env.MONGO_URI;
+    if (!dbUrl) {
+      throw new Error("Database URL (DB_URL or MONGO_URI) is not defined in environment variables.");
+    }
+    await mongoose.connect(dbUrl);
   } catch (err) {
     console.error("DB connection refused:", err);
     process.exit(1);

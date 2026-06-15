@@ -76,7 +76,7 @@ authAPP.post("/login", loginLimiter, validate(loginSchema), async (req, res, nex
         role: user.role,
         avatarUrl: user.avatarUrl,
       },
-      process.env.SECRET_KEY,
+      process.env.SECRET_KEY || process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
 

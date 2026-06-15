@@ -5,13 +5,16 @@
  */
 import nodemailer from "nodemailer";
 
+const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER;
+const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.gmail.com",
   port: Number(process.env.SMTP_PORT) || 587,
   secure: false,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: smtpUser,
+    pass: smtpPass,
   },
 });
 
@@ -26,7 +29,7 @@ const transporter = nodemailer.createTransport({
 export const sendEmail = async ({ to, subject, html }) => {
   try {
     const info = await transporter.sendMail({
-      from: `"PeerLance" <${process.env.SMTP_USER}>`,
+      from: `"PeerLance" <${smtpUser}>`,
       to,
       subject,
       html,

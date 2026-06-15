@@ -19,7 +19,8 @@ export const verifyToken = (...allowedRoles) => {
       }
 
       // validate token (decode)
-      const decodedToken = verify(token, process.env.SECRET_KEY);
+      const secret = process.env.SECRET_KEY || process.env.JWT_SECRET;
+      const decodedToken = verify(token, secret);
 
       // check role if roles are specified
       if (allowedRoles.length > 0 && !allowedRoles.includes(decodedToken.role)) {
